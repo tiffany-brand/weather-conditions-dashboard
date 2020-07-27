@@ -1,0 +1,43 @@
+
+/* Header */
+
+header {
+    background-color: teal;
+}
+
+div.title {
+    
+    color: white;
+    text-align: center;
+}
+
+div.title h1 {
+    padding: 10px;
+}
+
+/* Main content */
+
+main.dashboard {
+    background-color: rgb(247, 247, 247);
+}
+
+div.cityList {
+    margin-top: 20px;
+}
+
+div.city {
+    padding: 10px;
+    /* border: 1px solid rgb(180, 180, 180); */
+}
+
+div.currentWeather {
+    margin-bottom: 20px;
+}
+
+div.currentWeather h2 {
+    font-size: 1.5rem;
+}
+
+div.fiveDay h2 {
+    font-size: 1.2rem;
+}
