@@ -36,6 +36,7 @@ div.currentWeather {
 
 div.currentWeather h2 {
     font-size: 1.5rem;
+    margin: 10px;
 }
 
 div.fiveDay h2 {
