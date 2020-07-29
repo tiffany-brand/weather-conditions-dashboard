@@ -29,11 +29,11 @@
             <div class="col-3">
                 <form>
                     <div class="form-row">
-                        <div class="form-group col-9">
+                        <div class="form-group col-8">
                             <label for="city-input">Search for a City</label>
                             <input type="text" class="form-control" id="city-input">
                         </div>
-                        <div class="form-group col-3">
+                        <div class="form-group col-4">
                             <label for="state-input">State</label>
                             <input type="text" maxlength="2" class="form-control" id="state-input">
                         </div>
@@ -67,16 +67,16 @@
 
                     <!-- Current Weather Forecast -->
                     <div class="col-12 currentWeather">
-                        <div class="d-flex">
+                        <div class="d-flex cityName">
                             <h2 id="city"></h2>
                             <h2 id="date"></h2>
                             <img id="weather-icon" />
                         </div>
 
-                        <p id="temperature">Temperature: </p>
-                        <p id="humidity">Humidity: </p>
-                        <p id="wind">Wind Speed: </p>
-                        <p>UV Index: </p>
+                        <p>Temperature: <span id="temperature"></span> &deg;F</p>
+                        <p>Humidity: <span id="humidity"></span> % </p>
+                        <p>Wind Speed: <span id="wind"></span> MPH</p>
+                        <p>UV Index: <span id="uv-index"></span> </p>
 
                     </div>
 

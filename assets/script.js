@@ -6,6 +6,11 @@ $(document).ready(function () {
     const cityEl = $("h2#city");
     const dateEl = $("h2#date")
     const weatherIconEl = $("img#weather-icon");
+    const temperatureEl = $("span#temperature");
+    const humidityEl = $("span#humidity");
+    const windEl = $("span#wind");
+    const uvIndexEl = $("span#uv-index");
+
 
 
     function buildURL(city, state, country) {
@@ -18,6 +23,18 @@ $(document).ready(function () {
         };
 
     }
+
+    function setUVIndexColor(uvi) {
+        if (uvi < 3) {
+            return "green";
+        } else if (uvi >= 3 && uvi < 6) {
+            return "yellow";
+        } else if (uvi >= 6 && uvi < 8) {
+            return "orange";
+        } else if (uvi >= 8 && uvi < 11) {
+            return "red";
+        } else return "purple";
+    };
 
 
 
@@ -39,7 +56,33 @@ $(document).ready(function () {
             dateEl.text(formattedDate);
             let weatherIcon = response.weather[0].icon
             weatherIconEl.attr("src", `http://openweathermap.org/img/wn/${weatherIcon}.png`)
+            temperatureEl.html(((response.main.temp - 273.15) * 1.8 + 32).toFixed(1))
+            humidityEl.text(response.main.humidity);
+            windEl.text((response.wind.speed * 2.237).toFixed(1));
 
+
+            let lat = response.coord.lat;
+            let lon = response.coord.lon;
+            let queryURLAll = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`
+            $.ajax({
+                url: queryURLAll,
+                method: "GET"
+            }).then(function (response) {
+
+                console.log(response);
+                let uvIndex = response.current.uvi;
+                let uvColor = setUVIndexColor(uvIndex);
+                uvIndexEl.text(response.current.uvi);
+                uvIndexEl.attr("style", `background-color: ${uvColor}`);
+                let fiveDay = response.daily;
+                for (let i = 0; i < 5; i++) {
+                    let currDay = fiveDay[i]
+                    console.log(moment.unix(currDay.dt).format("L"));
+                    console.log("temp " + ((currDay.temp.day - 273.15) * 1.8 + 32).toFixed(1) + " degrees F");
+                    console.log("humidity " + currDay.humidity + "%");
+                    console.log(currDay.weather[0].icon);
+                }
+            })
         })
     }
 

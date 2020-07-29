@@ -30,13 +30,24 @@ div.city {
     /* border: 1px solid rgb(180, 180, 180); */
 }
 
+div.cityName {
+    background-color: rgb(136, 199, 199);
+    color: white;
+    
+}
+
 div.currentWeather {
     margin-bottom: 20px;
+    background-color: rgb(209, 243, 243);
 }
 
 div.currentWeather h2 {
     font-size: 1.5rem;
     margin: 10px;
+}
+
+span#uv-index {
+    color: white;
 }
 
 div.fiveDay h2 {
