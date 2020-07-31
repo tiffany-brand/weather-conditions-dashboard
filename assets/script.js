@@ -10,6 +10,7 @@ $(document).ready(function() {
 	const windEl = $('span#wind');
 	const uvIndexEl = $('span#uv-index');
 	const fiveDayEl = $('div.fiveDay');
+	const cityListEl = $('div.cityList');
 
 	// Store past searched cities
 	let pastCities = [];
@@ -23,6 +24,10 @@ $(document).ready(function() {
 			pastCities = storedCities;
 		}
 	}
+
+	// load any cities in local storage into array
+	loadCities();
+	displayCities(pastCities);
 
 	// store past searched cities in local storage
 	function storeCities() {
@@ -39,6 +44,16 @@ $(document).ready(function() {
 		}
 	}
 
+	function displayCities(pastCities) {
+		cityListEl.empty();
+		pastCities.forEach(function(location) {
+			let cityDiv = $('<div>').addClass('col-12 city');
+			let cityBtn = $('<button>').addClass('btn btn-light').text(location.city);
+			cityDiv.append(cityBtn);
+			cityListEl.append(cityDiv);
+		});
+	}
+
 	function setUVIndexColor(uvi) {
 		if (uvi < 3) {
 			return 'green';
@@ -53,7 +68,6 @@ $(document).ready(function() {
 
 	function searchWeather(city, state, country) {
 		let queryURL = buildURL(city, state, country);
-		console.log(queryURL);
 
 		// Create an AJAX call to retrieve weather data
 		$.ajax({
@@ -85,7 +99,6 @@ $(document).ready(function() {
 				let fiveDay = response.daily;
 				for (let i = 0; i <= 5; i++) {
 					let currDay = fiveDay[i];
-					console.log($(`div.day-${i}.card-title`));
 					$(`div.day-${i} .card-title`).text(moment.unix(currDay.dt).format('L'));
 					$(`div.day-${i} .fiveDay-img`).attr(
 						'src',
@@ -93,11 +106,6 @@ $(document).ready(function() {
 					);
 					$(`div.day-${i} .fiveDay-temp`).text(((currDay.temp.day - 273.15) * 1.8 + 32).toFixed(1));
 					$(`div.day-${i} .fiveDay-humid`).text(currDay.humidity);
-					console.log(currDay);
-					console.log(moment.unix(currDay.dt).format('L'));
-					console.log('temp ' + ((currDay.temp.day - 273.15) * 1.8 + 32).toFixed(1) + ' degrees F');
-					console.log('humidity ' + currDay.humidity + '%');
-					console.log(currDay.weather[0].icon);
 				}
 			});
 		});
@@ -108,9 +116,7 @@ $(document).ready(function() {
 	// Event handler for search button
 	$('#search-btn').on('click', function(event) {
 		// Preventing the button from trying to submit the form
-		console.log(event);
 		event.preventDefault();
-		console.log('here');
 		const cityInput = $('#city-input');
 		const stateInput = $('#state-input');
 		const countryInput = $('#country-input');
@@ -123,9 +129,25 @@ $(document).ready(function() {
 
 		let country = countryInput.val().trim();
 
+		let cityToStore = { city, state, country };
+
+		// let newArr = pastCities.filter(function(location) {
+		// 	console.log(location);
+		// 	console.log(cityToStore);
+		// 	location.city == cityToStore.city;
+		// });
+		// console.log(pastCities);
+		// console.log(newArr);
+
+		// // pull out city if it's already there
+		// _.pull(pastCities, cityToStore);
 		// add city to beginning of past searched array
 		pastCities.unshift({ city, state, country });
 		console.log(pastCities);
+
+		// store city in local storage
+		storeCities();
+		displayCities(pastCities);
 
 		// clear the input fields
 		cityInput.val('');
@@ -134,10 +156,6 @@ $(document).ready(function() {
 
 		if (city) {
 			// Run the searchWeather function(passing in the city, state, and country as an argument)
-			// searchWeather(city, state, country);
-			console.log('city ' + city);
-			console.log('state ' + state);
-			console.log('country ' + country);
 			searchWeather(city, state, country);
 		}
 	});
