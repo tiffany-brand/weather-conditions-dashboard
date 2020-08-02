@@ -50,7 +50,7 @@ $(document).ready(function () {
         cityListEl.empty();
         pastCities.forEach(function (location) {
             let cityDiv = $('<div>').addClass('col-12 city');
-            let cityBtn = $('<button>').addClass('btn btn-light').text(location.city);
+            let cityBtn = $('<button>').addClass('btn btn-light city-btn').text(location.city);
             cityDiv.append(cityBtn);
             cityListEl.append(cityDiv);
         });
@@ -145,7 +145,7 @@ $(document).ready(function () {
 
 
 
-    // Event handler for search button
+    // Click handler for search button
     $('#search-btn').on('click', function (event) {
         // Preventing the button from trying to submit the form
         event.preventDefault();
@@ -172,6 +172,20 @@ $(document).ready(function () {
             searchWeather(queryURL);
         }
     });
+
+    // Click handler for city buttons
+
+    $(document).on("click", "button.city-btn", function (event) {
+        let clickedCity = $(this).text();
+        let foundCity = $.grep(pastCities, function (storedCity) {
+            console.log(storedCity.city);
+            return clickedCity === storedCity.city;
+        })
+        console.log(foundCity);
+        let queryURL = buildURLFromId(foundCity[0].id)
+        searchWeather(queryURL);
+    });
+
 
     // Initialization - when page loads
 
