@@ -53,3 +53,11 @@ span#uv-index {
 div.fiveDay h2 {
     font-size: 1.2rem;
 }
+
+div.fiveDay p {
+    font-size: .8rem;
+}
+
+div.fiveDay p.card-title {
+    font-weight: bold;
+}

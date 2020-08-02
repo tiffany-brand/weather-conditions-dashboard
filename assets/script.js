@@ -15,6 +15,23 @@ $(document).ready(function () {
     // Store past searched cities
     let pastCities = [];
 
+    // Helper function to sort cities
+
+    function compare(a, b) {
+        // Use toUpperCase() to ignore character casing
+        const cityA = a.city.toUpperCase();
+        const cityB = b.city.toUpperCase();
+
+        let comparison = 0;
+        if (cityA > cityB) {
+            comparison = 1;
+        } else if (cityA < cityB) {
+            comparison = -1;
+        }
+        return comparison;
+    }
+
+
     // local storage functions for past searched cities
 
     // loads events from local storage
@@ -48,7 +65,9 @@ $(document).ready(function () {
 
     function displayCities(pastCities) {
         cityListEl.empty();
-        pastCities.forEach(function (location) {
+        let sortedCities = [...pastCities];
+        sortedCities.sort(compare);
+        sortedCities.forEach(function (location) {
             let cityDiv = $('<div>').addClass('col-12 city');
             let cityBtn = $('<button>').addClass('btn btn-light city-btn').text(location.city);
             cityDiv.append(cityBtn);
