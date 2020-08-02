@@ -21,21 +21,27 @@ main.dashboard {
     background-color: rgb(247, 247, 247);
 }
 
+/* Left Sidebar */
+
+div.recent-searches h2 {
+    font-size: 1.2rem;
+}
+
 div.cityList {
     margin-top: 20px;
 }
 
 div.city {
     padding: 10px;
-    /* border: 1px solid rgb(180, 180, 180); */
 }
 
 div.cityName {
     background-color: rgb(136, 199, 199);
     color: white;
-    /* padding: 10px; */
     
 }
+
+/* Weather Data */
 
 div.currentWeather {
     margin-bottom: 20px;
@@ -44,11 +50,9 @@ div.currentWeather {
 
 div.currentWeather h2,
 div.currentWeather h3 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin: 10px;
 }
-
-
 
 span#uv-index {
     color: white;
