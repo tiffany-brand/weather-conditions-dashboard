@@ -33,4 +33,12 @@ WHEN I open the weather dashboard
 THEN I am presented with the last searched city forecast
 ```
 
+## Resources
+
+OpenWeather API: https://openweathermap.org/api 
+
+Bootstrap 4 CSS Framework: https://getbootstrap.com/
+
+Moment JS: https://momentjs.com/ 
+
 ## Screenshots
