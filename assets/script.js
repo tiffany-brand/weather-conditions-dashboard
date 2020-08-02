@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     // Selectors for HTML elements to display weather information
     const cityEl = $('h2#city');
-    const dateEl = $('h2#date');
+    const dateEl = $('h3#date');
     const weatherIconEl = $('img#weather-icon');
     const temperatureEl = $('span#temperature');
     const humidityEl = $('span#humidity');
@@ -65,6 +65,7 @@ $(document).ready(function () {
 
     function displayCities(pastCities) {
         cityListEl.empty();
+        pastCities.splice(5);
         let sortedCities = [...pastCities];
         sortedCities.sort(compare);
         sortedCities.forEach(function (location) {
