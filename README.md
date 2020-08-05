@@ -45,10 +45,10 @@ Moment JS: https://momentjs.com/
 
 ### Desktop
 
-![weather-screen-1](https://user-images.githubusercontent.com/16748389/89132208-91acb880-d4e0-11ea-81a7-6eaa9e0f578e.JPG)
+![weather-screen-2](https://user-images.githubusercontent.com/16748389/89361446-4d184d00-d699-11ea-8683-0fd1b8395323.JPG)
 
 
 ### Mobile
 
-![weather-mobile-3](https://user-images.githubusercontent.com/16748389/89132245-cc165580-d4e0-11ea-9d63-8c32f6ca61f4.JPG)
-![weather-mobile-2](https://user-images.githubusercontent.com/16748389/89132214-95d8d600-d4e0-11ea-9595-e6f3c42f1d3d.JPG)
+![weather-mobile-4](https://user-images.githubusercontent.com/16748389/89361451-50133d80-d699-11ea-8d5a-3d8b42d728eb.JPG)
+
