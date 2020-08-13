@@ -1,4 +1,7 @@
 # Weather Conditions Dashboard
+
+![LICENSE](https://img.shields.io/github/license/tiffany-brand/weather-conditions-dashboard?style=plastic) 
+
 This weather dashboard project allows the user to search for cities and view current weather conditions and a 5 day forecast with data from the OpenWeather API. A user can input a city and a state and/or country, and the relevent weather data will be retrieved from OpenwWeather. The past five searched cities will appear as buttons that, when clicked, will load the current weather data for that city. When the page is refreshed, the last-searched city's weather data is displayed.
 
 ## Link to Deployed Application
@@ -51,4 +54,8 @@ Moment JS: https://momentjs.com/
 ### Mobile
 
 ![weather-mobile-4](https://user-images.githubusercontent.com/16748389/89361451-50133d80-d699-11ea-8d5a-3d8b42d728eb.JPG)
+
+## License
+
+[MIT License](./LICENSE)
 
