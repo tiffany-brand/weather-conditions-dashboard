@@ -12,7 +12,8 @@ View the Weather Conditions Dashboard at: https://tiffany-brand.github.io/weathe
 2. [Requirements](#Requirements)
 3. [Technologies](#Technologies) 
 4. [Screenshots](#Screenshots)
-5. [License](#License)
+5. [Contact](#Contact)
+6. [License](#License)
 
 ## Description
 
@@ -68,6 +69,10 @@ Moment JS: https://momentjs.com/
 ### Mobile
 
 ![weather-mobile-4](https://user-images.githubusercontent.com/16748389/89361451-50133d80-d699-11ea-8d5a-3d8b42d728eb.JPG)
+
+## Contact
+
+- [Tiffany Brand](https://github.com/tiffany-brand)
 
 ## License
 
