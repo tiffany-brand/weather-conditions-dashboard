@@ -2,11 +2,23 @@
 
 ![LICENSE](https://img.shields.io/github/license/tiffany-brand/weather-conditions-dashboard?style=plastic) 
 
-This weather dashboard project allows the user to search for cities and view current weather conditions and a 5 day forecast with data from the OpenWeather API. A user can input a city and a state and/or country, and the relevent weather data will be retrieved from OpenwWeather. The past five searched cities will appear as buttons that, when clicked, will load the current weather data for that city. When the page is refreshed, the last-searched city's weather data is displayed.
-
 ## Link to Deployed Application
 
-https://tiffany-brand.github.io/weather-conditions-dashboard/
+View the Weather Conditions Dashboard at: https://tiffany-brand.github.io/weather-conditions-dashboard/
+
+## Table of Contents
+
+1. [Description](#Description)
+2. [Requirements](#Requirements)
+3. [Resources](#Resources) 
+4. [Screenshots](#Screenshots)
+5. [License](#License)
+
+## Description
+
+This weather dashboard project allows the user to search for cities and view current weather conditions and a 5 day forecast with data from the OpenWeather API. A user can input a city and a state and/or country, and the relevent weather data will be retrieved from OpenwWeather. The past five searched cities will appear as buttons that, when clicked, will load the current weather data for that city. When the page is refreshed, the last-searched city's weather data is displayed.
+
+
 
 ## Requirements
 
