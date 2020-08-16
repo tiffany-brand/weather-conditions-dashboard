@@ -10,7 +10,7 @@ View the Weather Conditions Dashboard at: https://tiffany-brand.github.io/weathe
 
 1. [Description](#Description)
 2. [Requirements](#Requirements)
-3. [Resources](#Resources) 
+3. [Technologies](#Technologies) 
 4. [Screenshots](#Screenshots)
 5. [License](#License)
 
@@ -48,7 +48,9 @@ WHEN I open the weather dashboard
 THEN I am presented with the last searched city forecast
 ```
 
-## Resources
+## Technologies
+
+HTML, CSS, & Javascript
 
 OpenWeather API: https://openweathermap.org/api 
 
